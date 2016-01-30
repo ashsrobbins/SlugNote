@@ -12,22 +12,17 @@ import android.widget.ListView;
 /**
  * Created by Ash on 1/30/2016.
  */
-public class coursesFragment extends ListFragment{
-
-    //SEND ID To server, recieve list of courses here
-    //get id from
-
-
-    //hard coded array
-    String[] courses = {"CMPE8", "CMPS5J", "WRITING 2", "CE100"};
+public class notesFragment extends ListFragment{
+    //Server transfer notes(obj/id)
 
     @Override
     public View onCreateView(LayoutInflater inf, ViewGroup container, Bundle savedInstanceState)
     {
-        View rootView=inf.inflate(R.layout.courses, container,false);
+        View rootView=inf.inflate(R.layout.notes, container,false);
 
         //adapter here
-        ListAdapter adapt = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
+        //Change this to make it so its not only string, get separate fields of the object array
+        ListAdapter adapt = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1);
         setListAdapter(adapt);
 
 
@@ -40,5 +35,7 @@ public class coursesFragment extends ListFragment{
 
         return;
     }
+
+
 
 }
