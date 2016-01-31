@@ -22,7 +22,7 @@ public class submitFragment extends Activity {
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    private GoogleApiClient client;
+    //private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +39,12 @@ public class submitFragment extends Activity {
         SlugImageView.setImageBitmap(stb);
 
 
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
+
+
+    // ATTENTION: This was auto-generated to implement the App Indexing API.
+    // See https://g.co/AppIndexing/AndroidStudio for more information.
+    //private GoogleApiClient client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
 
     public String BitMapToString(Bitmap bitmap)//changes bit from bitmap to a string
@@ -72,7 +73,7 @@ public class submitFragment extends Activity {
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
+        //client.connect();
         Action viewAction = Action.newAction(
                 Action.TYPE_VIEW, // TODO: choose an action type.
                 "submitFragment Page", // TODO: Define a title for the content shown.
@@ -83,7 +84,7 @@ public class submitFragment extends Activity {
                 // TODO: Make sure this auto-generated app deep link URI is correct.
                 Uri.parse("android-app://slugnote.com.slugnote/http/host/path")
         );
-        AppIndex.AppIndexApi.start(client, viewAction);
+       // AppIndex.AppIndexApi.start(client, viewAction);
     }
 
     @Override
@@ -102,7 +103,8 @@ public class submitFragment extends Activity {
                 // TODO: Make sure this auto-generated app deep link URI is correct.
                 Uri.parse("android-app://slugnote.com.slugnote/http/host/path")
         );
-        AppIndex.AppIndexApi.end(client, viewAction);
-        client.disconnect();
+//        AppIndex.AppIndexApi.end(client, viewAction);
+//        client.disconnect();
     }
 }
+

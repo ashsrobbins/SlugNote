@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom ="true"
-            android:text="1" />
+            android:background="@mipmap/catagory_icon" />
 
         <Button
             android:id="@+id/button2"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button1"
             android:layout_alignParentBottom ="true"
-            android:text="2" />
+            android:background="@mipmap/search_icon" />
 
         <Button
             android:id="@+id/button3"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button2"
             android:layout_alignParentBottom ="true"
-            android:text="3" />
+            android:background="@mipmap/upload_icon" />
 
         <Button
             android:id="@+id/button4"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button3"
             android:layout_alignParentBottom ="true"
-            android:text="4" />
+            android:background="@mipmap/mynotebook_icon" />
 
 
     </LinearLayout>

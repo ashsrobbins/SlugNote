@@ -1,32 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1"
-    android:id="@+id/search">
+    android:layout_height="match_parent">
 
-    <SearchView
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/searchView"
-    />
+        android:id="@+id/myNotebook"
+        android:layout_weight="1.0"/>
 
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight=".99" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        >
+        android:layout_height="wrap_content">
 
         <Button
-
             android:id="@+id/button1"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -62,8 +52,7 @@
             android:background="@mipmap/mynotebook_icon" />
 
 
-
-
     </LinearLayout>
 
 </LinearLayout>
+

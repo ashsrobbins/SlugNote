@@ -1,34 +1,32 @@
 package slugnote.com.slugnote;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.app.FragmentTransaction;
-import android.app.TabActivity;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TabHost;
 
 import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
 
 import org.json.JSONArray;
 
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity{
+
+public class categoryFragment extends Activity{
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -36,23 +34,28 @@ public class MainActivity extends Activity{
      */
    // private GoogleApiClient client;
 
+    private String[] collegeIds = {};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
+
+
+
+
         Button categories = (Button)findViewById(R.id.button1);
         Button search = (Button)findViewById(R.id.button2);
         Button upload = (Button)findViewById(R.id.button3);
-        Button notes = (Button)findViewById(R.id.button4);
-
+        Button mynotebook = (Button)findViewById(R.id.button4);
 
 
         categories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent1 = new Intent(getApplicationContext(),categoryFragment.class);
                 startActivity(intent1);
             }
         });
@@ -73,10 +76,10 @@ public class MainActivity extends Activity{
             }
         });
 
-        notes.setOnClickListener(new View.OnClickListener() {
+        mynotebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(),notesFragment.class);
+                Intent intent1 = new Intent(getApplicationContext(),myNotebook.class);
                 startActivity(intent1);
             }
         });
@@ -85,6 +88,24 @@ public class MainActivity extends Activity{
         ListView list = (ListView) findViewById(R.id.listViewColleges);
 
         try{
+            try{
+                URL url = new URL("http://api.slugnote.com");
+
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+                connection.setDoOutput(true);
+                connection.setRequestMethod("POST");
+
+                OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
+
+              //  writer.write("message=" + message);
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             String in = "[\"UCSC\",\"UCSD\",\"UCLA\",\"UCSB\",\"UCSF\"]";
             JSONArray jsIn = new JSONArray(in);
             int len = jsIn.length();
@@ -151,6 +172,7 @@ public class MainActivity extends Activity{
 
 
     }
+
 
 
     @Override

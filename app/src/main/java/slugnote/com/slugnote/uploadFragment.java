@@ -10,12 +10,8 @@ import android.os.Environment;
 import android.provider.MediaStore;
 
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Button;
 import android.widget.Toast;
@@ -38,11 +34,49 @@ public class uploadFragment extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.upload);
 
+        Button categories = (Button) findViewById(R.id.button1);
+        Button search = (Button) findViewById(R.id.button2);
+        Button upload = (Button) findViewById(R.id.button3);
+        Button mynotebook = (Button) findViewById(R.id.button4);
+
+
+        categories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), categoryFragment.class);
+                startActivity(intent1);
+            }
+        });
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), searchFragment.class);
+                startActivity(intent1);
+            }
+        });
+
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), uploadFragment.class);
+                startActivity(intent1);
+            }
+        });
+
+        mynotebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), myNotebook.class);
+                startActivity(intent1);
+            }
+        });
+
+
 
         Button Slugbutton = (Button) findViewById(R.id.Slugbutton);
         SlugImageView = (ImageView) findViewById(R.id.SlugImageView);
         //imgPicture = (ImageView) findViewById(R.id.imgPicture);
-
 
 
 

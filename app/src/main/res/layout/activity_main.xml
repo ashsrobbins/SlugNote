@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginBottom="5dp">
 
     <ListView
         android:layout_width="match_parent"
@@ -26,7 +23,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom ="true"
-            android:text="1" />
+            android:background="@mipmap/catagory_icon" />
 
         <Button
             android:id="@+id/button2"
@@ -35,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button1"
             android:layout_alignParentBottom ="true"
-            android:text="2" />
+            android:background="@mipmap/search_icon" />
 
         <Button
             android:id="@+id/button3"
@@ -44,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button2"
             android:layout_alignParentBottom ="true"
-            android:text="3" />
+            android:background="@mipmap/upload_icon" />
 
         <Button
             android:id="@+id/button4"
@@ -53,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button3"
             android:layout_alignParentBottom ="true"
-            android:text="4" />
+            android:background="@mipmap/mynotebook_icon" />
 
 
     </LinearLayout>
