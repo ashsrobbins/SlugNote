@@ -104,7 +104,12 @@ public class MainActivity extends Activity{
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     String temp = ((TextView)view).getText() + Integer.toString(position);
-                    Toast.makeText(getApplicationContext(),temp ,Toast.LENGTH_SHORT ).show();
+                    Toast.makeText(getApplicationContext(),temp ,Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(getApplicationContext(),coursesFragment.class);
+                    //intent.putExtra("college-name", ((TextView)view).getText());
+                    //intent.putExtra("college-id", XXXX);
+                    startActivity(intent);
                 }
             });
         }

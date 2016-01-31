@@ -39,54 +39,57 @@ public class coursesFragment extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.courses);
+        if(savedInstanceState==null){
+            Toast.makeText(getApplicationContext(), "State == null", Toast.LENGTH_SHORT).show();
+        }
 
 
-        Button categories = (Button) findViewById(R.id.button1);
-        Button search = (Button) findViewById(R.id.button2);
-        Button upload = (Button) findViewById(R.id.button3);
-        Button notes = (Button) findViewById(R.id.button4);
-        Button settings = (Button) findViewById(R.id.button5);
-
-
-        categories.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent1);
-            }
-        });
-
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(), searchFragment.class);
-                startActivity(intent1);
-            }
-        });
-
-        upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(), uploadFragment.class);
-                startActivity(intent1);
-            }
-        });
-
-        notes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(), notesFragment.class);
-                startActivity(intent1);
-            }
-        });
-
-        settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(), settingsFragment.class);
-                startActivity(intent1);
-            }
-        });
+//        Button categories = (Button) findViewById(R.id.button1);
+//        Button search = (Button) findViewById(R.id.button2);
+//        Button upload = (Button) findViewById(R.id.button3);
+//        Button notes = (Button) findViewById(R.id.button4);
+//        Button settings = (Button) findViewById(R.id.button5);
+//
+//
+//        categories.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
+//                startActivity(intent1);
+//            }
+//        });
+//
+//        search.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent1 = new Intent(getApplicationContext(), searchFragment.class);
+//                startActivity(intent1);
+//            }
+//        });
+//
+//        upload.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent1 = new Intent(getApplicationContext(), uploadFragment.class);
+//                startActivity(intent1);
+//            }
+//        });
+//
+//        notes.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent1 = new Intent(getApplicationContext(), notesFragment.class);
+//                startActivity(intent1);
+//            }
+//        });
+//
+//        settings.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent1 = new Intent(getApplicationContext(), settingsFragment.class);
+//                startActivity(intent1);
+//            }
+//        });
 
         ListView list = (ListView) findViewById(R.id.listViewCourses);
 
@@ -111,5 +114,45 @@ public class coursesFragment extends Activity {
         }
 
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        // client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Main Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://slugnote.com.slugnote/http/host/path")
+        );
+        // AppIndex.AppIndexApi.start(client, viewAction);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Main Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://slugnote.com.slugnote/http/host/path")
+        );
+        // AppIndex.AppIndexApi.end(client, viewAction);
+        //client.disconnect();
     }
 }
