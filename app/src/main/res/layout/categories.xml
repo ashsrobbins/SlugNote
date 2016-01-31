@@ -22,14 +22,16 @@
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom ="true"
             android:text="1" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button1"
             android:layout_alignParentBottom ="true"
@@ -37,7 +39,8 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button2"
             android:layout_alignParentBottom ="true"
@@ -45,19 +48,13 @@
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button3"
             android:layout_alignParentBottom ="true"
             android:text="4" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/button4"
-            android:layout_alignParentBottom ="true"
-            android:text="5" />
 
     </LinearLayout>
 

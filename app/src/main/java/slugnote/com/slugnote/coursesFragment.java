@@ -48,7 +48,7 @@ public class coursesFragment extends Activity {
         Button search = (Button) findViewById(R.id.button2);
         Button upload = (Button) findViewById(R.id.button3);
         Button notes = (Button) findViewById(R.id.button4);
-        Button settings = (Button) findViewById(R.id.button5);
+
 
 
         categories.setOnClickListener(new View.OnClickListener() {
@@ -83,13 +83,7 @@ public class coursesFragment extends Activity {
             }
         });
 
-        settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(), settingsFragment.class);
-                startActivity(intent1);
-            }
-        });
+
 
         ListView list = (ListView) findViewById(R.id.listViewCourses);
 
