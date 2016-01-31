@@ -44,52 +44,52 @@ public class coursesFragment extends Activity {
         }
 
 
-//        Button categories = (Button) findViewById(R.id.button1);
-//        Button search = (Button) findViewById(R.id.button2);
-//        Button upload = (Button) findViewById(R.id.button3);
-//        Button notes = (Button) findViewById(R.id.button4);
-//        Button settings = (Button) findViewById(R.id.button5);
-//
-//
-//        categories.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
-//                startActivity(intent1);
-//            }
-//        });
-//
-//        search.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent1 = new Intent(getApplicationContext(), searchFragment.class);
-//                startActivity(intent1);
-//            }
-//        });
-//
-//        upload.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent1 = new Intent(getApplicationContext(), uploadFragment.class);
-//                startActivity(intent1);
-//            }
-//        });
-//
-//        notes.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent1 = new Intent(getApplicationContext(), notesFragment.class);
-//                startActivity(intent1);
-//            }
-//        });
-//
-//        settings.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent1 = new Intent(getApplicationContext(), settingsFragment.class);
-//                startActivity(intent1);
-//            }
-//        });
+        Button categories = (Button) findViewById(R.id.button1);
+        Button search = (Button) findViewById(R.id.button2);
+        Button upload = (Button) findViewById(R.id.button3);
+        Button notes = (Button) findViewById(R.id.button4);
+        Button settings = (Button) findViewById(R.id.button5);
+
+
+        categories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), searchFragment.class);
+                startActivity(intent1);
+            }
+        });
+
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), uploadFragment.class);
+                startActivity(intent1);
+            }
+        });
+
+        notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), notesFragment.class);
+                startActivity(intent1);
+            }
+        });
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), settingsFragment.class);
+                startActivity(intent1);
+            }
+        });
 
         ListView list = (ListView) findViewById(R.id.listViewCourses);
 
@@ -107,6 +107,11 @@ public class coursesFragment extends Activity {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     String temp = ((TextView) view).getText() + Integer.toString(position);
                     Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(getApplicationContext(),notesFragment.class);
+                    //intent.putExtra("college-name", ((TextView)view).getText());
+                    //intent.putExtra("college-id", XXXX);
+                    startActivity(intent);
                 }
             });
         } catch (Exception e) {
