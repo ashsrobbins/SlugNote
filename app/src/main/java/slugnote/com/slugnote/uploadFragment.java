@@ -74,7 +74,7 @@ public class uploadFragment extends AppCompatActivity
             String bts = BitMapToString(slugPic);
 
 
-            Intent intent = new Intent(getApplicationContext(),coursesFragment.class);
+            Intent intent = new Intent(getApplicationContext(),submitFragment.class);
             intent.putExtra("image-name", bts);
 
             startActivity(intent);
