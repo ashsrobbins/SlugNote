@@ -30,9 +30,7 @@ public class notesFragment extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notes);
-        if(savedInstanceState==null){
-            Toast.makeText(getApplicationContext(), "State == null", Toast.LENGTH_SHORT).show();
-        }
+
 
 
         Button categories = (Button) findViewById(R.id.button1);
@@ -79,12 +77,12 @@ public class notesFragment extends Activity {
         ListView list = (ListView) findViewById(R.id.listViewNotes);
 
         try {
-            String in = "[\"Lecture1\",\"Lecture2\",\"Lecture 3\",\"Lecture 4\",\"Lecture 5\",\"Lecture1\",\"Lecture2\",\"Lecture 3\",\"Lecture 4\",\"Lecture 5\",\"Lecture2\",\"Lecture 3\",\"Lecture 4\",\"Lecture 5\"]";
+            String in = "[\"Lecture1\",\"Lecture2\",\"Lecture 3\",\"Lecture 4\",\"Lecture 5\",\"Lecture6\",\"Lecture7\",\"Lecture 8\",\"Lecture 9\",\"Lecture 10\",\"Lecture11\",\"Lecture 12\",\"Lecture 13\",\"Lecture 14\"]";
             JSONArray jsIn = new JSONArray(in);
             int len = jsIn.length();
             List<String> lc = new ArrayList<>(len);
             for (int i = 0; i < len; i++) {
-                lc.add(jsIn.getString(i));
+                lc.add(jsIn.getString(i) + "");
             }
             list.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lc));
             list.setOnItemClickListener(new OnItemClickListener() {
@@ -93,10 +91,11 @@ public class notesFragment extends Activity {
                     String temp = ((TextView) view).getText() + Integer.toString(position);
                     Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_SHORT).show();
 
-                    //Intent intent = new Intent(getApplicationContext(),coursesFragment.class);
-                    //intent.putExtra("college-name", ((TextView)view).getText());
+                    Intent intent = new Intent(getApplicationContext(),noteviewFragment.class);
+                    //intent.putExtra("note-name", ((TextView)view).getText());
                     //intent.putExtra("college-id", XXXX);
                     //startActivity(intent);
+                    startActivity(intent);
                 }
             });
         } catch (Exception e) {

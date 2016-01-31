@@ -18,12 +18,14 @@ public class noteviewFragment extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.noteview);
 
-        String imageName = getIntent().getStringExtra("image-name");
+        String imageName = getIntent().getStringExtra("note-name");
 
         ImageView SlugImageView = (ImageView) findViewById(R.id.SlugNoteView);
         Bitmap stb = StringToBitMap(imageName);
-
-        SlugImageView.setImageBitmap(stb);
+        Bitmap icon = BitmapFactory.decodeResource(getResources(),
+                R.drawable.ic_launcher);
+        //SlugImageView.setImageResource(icon);
+        SlugImageView.setImageResource(R.drawable.image5);
 
     }
 

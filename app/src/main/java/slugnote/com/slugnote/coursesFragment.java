@@ -31,9 +31,7 @@ public class coursesFragment extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.courses);
-        if(savedInstanceState==null){
-            Toast.makeText(getApplicationContext(), "State == null", Toast.LENGTH_SHORT).show();
-        }
+       
 
 
         Button categories = (Button) findViewById(R.id.button1);

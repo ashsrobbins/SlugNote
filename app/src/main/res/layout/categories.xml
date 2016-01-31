@@ -25,6 +25,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom ="true"
+
             android:background="@mipmap/catagory_icon" />
 
         <Button
@@ -35,6 +36,7 @@
             android:layout_toRightOf="@id/button1"
             android:layout_alignParentBottom ="true"
             android:background="@mipmap/search_icon" />
+
 
         <Button
             android:id="@+id/button3"

@@ -1,11 +1,14 @@
 package slugnote.com.slugnote;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.google.android.gms.appindexing.Action;
@@ -37,6 +40,17 @@ public class submitFragment extends Activity {
         Bitmap stb = StringToBitMap(imageName);
 
         SlugImageView.setImageBitmap(stb);
+
+        Button submit = (Button)findViewById(R.id.submitButton);
+
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), myNotebook.class);
+                startActivity(intent1);
+            }
+        });
 
 
     }

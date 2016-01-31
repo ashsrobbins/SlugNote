@@ -88,23 +88,23 @@ public class categoryFragment extends Activity{
         ListView list = (ListView) findViewById(R.id.listViewColleges);
 
         try{
-            try{
-                URL url = new URL("http://api.slugnote.com");
-
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-                connection.setDoOutput(true);
-                connection.setRequestMethod("POST");
-
-                OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
-
-              //  writer.write("message=" + message);
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//            try{
+//                URL url = new URL("http://api.slugnote.com");
+//
+//                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+//
+//                connection.setDoOutput(true);
+//                connection.setRequestMethod("POST");
+//
+//                OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
+//
+//              //  writer.write("message=" + message);
+//
+//            } catch (MalformedURLException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
 
             String in = "[\"UCSC\",\"UCSD\",\"UCLA\",\"UCSB\",\"UCSF\"]";
             JSONArray jsIn = new JSONArray(in);
