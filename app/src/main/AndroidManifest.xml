@@ -23,6 +23,10 @@
         <activity android:name=".notesFragment"
         android:label="notes">
         </activity>
+        <activity android:name=".uploadFragment"
+            android:label="upload">
+
+        </activity>
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
