@@ -12,6 +12,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -67,7 +69,16 @@ public class uploadFragment extends AppCompatActivity
             //now we get the data or the photo
             Bundle extras = data.getExtras();
             Bitmap slugPic = (Bitmap)extras.get("data");//returns photo info and convert to a bitmap
-            SlugImageView.setImageBitmap(slugPic);
+
+            //convert bitmap to a STRIINGGG
+            String bts = BitMapToString(slugPic);
+
+
+            Intent intent = new Intent(getApplicationContext(),coursesFragment.class);
+            intent.putExtra("image-name", bts);
+
+            startActivity(intent);
+            //SlugImageView.setImageBitmap(slugPic);
         }
         else if (resultCode == RESULT_OK)
         {
@@ -105,6 +116,28 @@ public class uploadFragment extends AppCompatActivity
     }
 
 
+
+    public String BitMapToString(Bitmap bitmap)//changes bit from bitmap to a string
+    {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] b = baos.toByteArray();
+        String temp = Base64.encodeToString(b, Base64.DEFAULT);
+        return temp;
+    }
+
+    public Bitmap StringToBitMap(String encodedString) {
+        try {
+            byte[] encodeByte = Base64.decode(encodedString, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+            return bitmap;
+        } catch (Exception e) {
+            e.getMessage();
+            return null;
+        }
+    }
+
+
     /*@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
@@ -127,6 +160,7 @@ public class uploadFragment extends AppCompatActivity
         }
 
     }*/
+
 
 
 }
