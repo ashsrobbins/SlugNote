@@ -3,21 +3,30 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="5dp">
+    android:weightSum="1"
+    android:id="@+id/search">
 
-    <ListView
+    <SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listViewColleges"
-        android:layout_weight="1.0"/>
+        android:id="@+id/searchView"
+    />
 
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight=".99" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+
+        >
 
         <Button
+
             android:id="@+id/button1"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -53,7 +62,8 @@
             android:background="@mipmap/mynotebook_icon" />
 
 
+
+
     </LinearLayout>
 
 </LinearLayout>
-

@@ -1,6 +1,7 @@
 package slugnote.com.slugnote;
 
 import android.app.ListFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,8 +37,13 @@ public class categoriesFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
         //SEND ID to server, and call the courses fragment?
-
-        return;
+        String content =  colleges[position];
+        Intent intent = new Intent(getActivity(), coursesFragment.class);
+        intent.putExtra("user-college", content);
+        //intent.putExtra("college-id", XXXXXX);
+        startActivity(intent);
+        //return;
     }
+
 
 }

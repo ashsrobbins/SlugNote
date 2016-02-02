@@ -24,14 +24,13 @@ import android.widget.Toast;
 /**
  * Created by Ash on 1/30/2016.
  */
-public class notesFragment extends Activity {
+
+public class myNotebook extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.notes);
-
-
+        setContentView(R.layout.mynotebook);
 
         Button categories = (Button) findViewById(R.id.button1);
         Button search = (Button) findViewById(R.id.button2);
@@ -73,28 +72,26 @@ public class notesFragment extends Activity {
 
 
 
-
-        ListView list = (ListView) findViewById(R.id.listViewNotes);
+        ListView list = (ListView) findViewById(R.id.myNotebook);
 
         try {
-            String in = "[\"Lecture1\",\"Lecture2\",\"Lecture 3\",\"Lecture 4\",\"Lecture 5\",\"Lecture6\",\"Lecture7\",\"Lecture 8\",\"Lecture 9\",\"Lecture 10\",\"Lecture11\",\"Lecture 12\",\"Lecture 13\",\"Lecture 14\"]";
+            String in = "[\"My Notes\",\"Saved Notes\",\"Settings\"]";
             JSONArray jsIn = new JSONArray(in);
             int len = jsIn.length();
-            List<String> lc = new ArrayList<>(len);
+            List<String> nb = new ArrayList<>(len);
             for (int i = 0; i < len; i++) {
-                lc.add(jsIn.getString(i) + "");
+                nb.add(jsIn.getString(i));
             }
-            list.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lc));
+            list.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, nb));
             list.setOnItemClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     String temp = ((TextView) view).getText() + Integer.toString(position);
                     Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(getApplicationContext(),noteviewFragment.class);
-                    //intent.putExtra("note-name", ((TextView)view).getText());
+                    Intent intent = new Intent(getApplicationContext(),myNotebook.class);
+                    //intent.putExtra("college-name", ((TextView)view).getText());
                     //intent.putExtra("college-id", XXXX);
-                    //startActivity(intent);
                     startActivity(intent);
                 }
             });
